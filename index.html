@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+    <!-- Required meta tags-->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no, minimal-ui, viewport-fit=cover">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <!-- Color theme for statusbar -->
+    <meta name="theme-color" content="#2196f3">
+    <!-- Your app title -->
+    <title>ClimApp 2.0</title>
+    <!-- Path to Framework7 Library CSS -->
+    <link rel="stylesheet" href="lib/framework7/css/framework7.bundle.min.css">
+    <!-- Path to icons -->
+    <link rel="stylesheet" href="css/icons.css">
+    <!-- Path to your custom app styles-->
+    <link rel="stylesheet" href="css/app.css">
+    <!-- LeafLet´s css-->
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css"
+        integrity="sha512-xodZBNTC5n17Xt2atTPuE1HxjVMSvLVW9ocqUKLsCC5CXdbqCmblAshOMAS6/keqq/sMZMZ19scR4PsZChSR7A=="
+        crossorigin=""/>
+    <!--  Leaflet's JS -->
+    <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"
+        integrity="sha512-XQoYMqMTK8LvdxXYG3nZ448hOEQiglfqkJs1NOQV44cWnUrBc8PkAOcXy20w0vlaXaVUearIOBhiXZ5V3ynxwA=="
+        crossorigin=""></script>
+    <script src="js/countryCode.json"></script>
+    <script src="js/cityList.json"></script>
+</head>
+
+<body class="theme-dark color-theme-teal">
+    <div id="app">
+        <!-- Statusbar overlay -->
+        <div class="statusbar"></div>
+    
+        <!-- Your main view, should have "view-main" class -->
+        <div class="view view-main">
+            <!-- Initial Page, "data-name" contains page name -->
+            <div data-name="index" class="page">
+    
+                <!-- Top Navbar -->
+                <div class="navbar">
+                    <div class="navbar-bg"></div>
+                    <div class="navbar-inner text-align-center">
+                        <h4 class="margin-left">ClimApp</h4>
+                    </div>
+                </div>
+        
+                <!-- Scrollable page content -->
+                <div class="page-content">
+                    <div class="block">
+                        <center>
+                            <div class="divCenter">
+                                <h3>Estado actual del tiempo</h3>
+                                <div class="row">
+                                    <div class="col-60 display-flex flex-direction-column align-items-center">
+                                        <br>
+                                        <h3 id="ciudadLocal">Ubicación del visitante</h3>
+                                        <p id="termicaLocal">termica</p>
+                                        <p id="presionLocal">presion</p>
+                                        <p id="humedadLocal">humedad</p>
+                                        <p id="visibilidadLocal">visiviliditatud</p>
+                                    </div>
+                                    <div class="col-40 display-flex flex-direction-column align-items-center">
+                                        <img src="" id="imgID">
+                                        <p id="tempLocal">temp</p>
+                                        <p id="descripcionLocal" class="text-align-center">descripcion</p>
+                                    </div>
+                                </div>
+        <!--------- Mapa con la ubicación del visitante --------->
+                                <div id="mapid"></div>
+                            </div>
+                        </center>
+<!--------- Popup de inicio --------->
+                        <div class="popup popup-inicio">
+                            <div class="block">
+                              <h3>ClimApp 2.0</h3>
+                              <p><a id="iniciar" class="link popup-close" href="#">COMENZAR</a></p>
+                              <p>Bienvenidos a la Aplicación del Clima</p>
+                              <ul>
+                                  <li>Conocé el estado actual del tiempo en tu ubicación actual</li>
+                                  <li>Geolocalización mediante cordova-plugin-geolocation</li>
+                                  <li>Información meteorológica obtenida de OpenWeather</li>
+                                  <li>Mapas creados con Leaflet 1.7 y OpenStreetMap</li>
+                                  <br>
+                              </ul>
+                              <p>Leandro Lobo, noviembre de 2020.</p>
+                            </div>
+                        </div>
+                        
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <script type="text/javascript" src="cordova.js"></script>
+    <script type="text/javascript" src="lib/framework7/js/framework7.bundle.min.js"></script>
+    <script type="text/javascript" src="js/my-app.js"></script>
+</body>
+
+</html>
